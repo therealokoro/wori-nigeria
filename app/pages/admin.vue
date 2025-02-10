@@ -39,13 +39,14 @@
           mt="10"
         >
           <li v-for="item in navItems">
-            <ui-button
+            <nuxt-link
               class="w-full justify-start bg-background gap-5"
               :icon="item.icon"
               :to="item.to"
-              :text="item.label"
               variant="ghost"
-            />
+            >
+              {{ item.label }}
+            </nuxt-link>
           </li>
         </ul>
       </UiScrollArea>

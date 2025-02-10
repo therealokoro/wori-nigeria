@@ -3,7 +3,10 @@
 </script>
 
 <template>
-  <Page title="Article">
+  <Page
+    admin
+    title="Article"
+  >
     Hello
   </Page>
 </template>
