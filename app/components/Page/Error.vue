@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { NuxtError } from "#app"
 
-  const { error } = defineProps<{ error: NuxtError<{ message: string }> }>()
+  const { error } = defineProps<{ error: NuxtError<any> }>()
   const title = computed(() => error.statusMessage ?? "An error occured")
   const message = computed(() => {
     const def = "This could be a mistake or an internal error. Let's help you get your way around"

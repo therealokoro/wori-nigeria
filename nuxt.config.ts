@@ -4,7 +4,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/fonts",
-    // "@pinia/nuxt",
     "@unocss/nuxt",
     "@vueuse/nuxt",
     "notivue/nuxt",
@@ -12,9 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxthub/core",
     "@nuxt/devtools",
-    // "@pinia/colada-nuxt",
     "@vee-validate/nuxt",
-    "@hebilicious/vue-query-nuxt",
     "@morev/vue-transitions/nuxt"
   ],
 

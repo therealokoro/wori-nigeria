@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import "~/assets/css/wysiwyg.css"
 
-const slug = ref(useRoute().params.slug?.toString())
+const slug = useRoute().params.slug?.toString()
 const { data } = await useFetch("/api/articles/single", {
   query: { slug, showNext: true }
 })
@@ -25,10 +25,9 @@ const nextArticles = computed(() => data.value!.nextArticles)
       >
         <!-- Main -->
         <article class="col-span-1 lg:col-span-2">
-          <div class="md:h-150 mb-10">
+          <div class="h-60 sm:h-80 md:h-100 mb-10">
             <NuxtImg
               :src="article.coverImage"
-              provider="local"
               image="cover"
             />
           </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { NuxtError } from "#app"
 
-  const { error } = defineProps<{ error: NuxtError<{ message: string }> }>()
+  const { error } = defineProps<{ error: NuxtError<any> }>()
 </script>
 
 <template>
