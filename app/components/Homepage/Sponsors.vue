@@ -43,6 +43,7 @@ const sponsors2 = [
         >
           <NuxtImg
             class="object-contain w-full h-full"
+            format="webp"
             :alt="i.alt"
             :src="i.image"
           />
@@ -59,6 +60,7 @@ const sponsors2 = [
         >
           <NuxtImg
             class="object-contain w-full h-full"
+            format="webp"
             :alt="i.alt"
             :src="i.image"
           />

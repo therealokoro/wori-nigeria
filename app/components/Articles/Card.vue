@@ -13,6 +13,7 @@ const el = computed(() => props.showButton ? "div" : resolveComponent("NuxtLink"
   >
     <nuxt-img
       :src="article.coverImage"
+      format="webp"
       image="cover"
       transition="~ ease-in-out"
       group-hover="scale-107"

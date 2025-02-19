@@ -12,6 +12,7 @@
   >
     <NuxtImg
       src="/wori-icon.svg"
+      format="webp"
       alt="WORI Logo"
       width="50px"
     />
