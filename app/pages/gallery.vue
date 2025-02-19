@@ -3,7 +3,7 @@
 
   const images = Array.from({ length: 20 }).map((c, i) => ({
     title: "Images from our outreach and events",
-    src: `/gallery/img (${i}).jpg`
+    src: `/gallery/img-${i}.jpg`
   }))
 
   const { show, onHide, visibleRef, indexRef } = useEasyLightbox({
