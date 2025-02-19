@@ -1,82 +1,116 @@
 <script lang="ts" setup>
   definePageMeta({ layout: "empty" })
-
   useSeoMeta({
     titleTemplate: "%s | Admin Dashboard - ACHEI",
     description: "Administrative Dashboard"
   })
 
+  const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
   const pageTitle = computed(() => useRoute().path.split("/")[2] || "Dashboard")
-  const navItems = [
-    { label: "Overview", to: "/admin", icon: "lucide:house" },
-    { label: "Articles", to: "/admin/articles", icon: "lucide:newspaper" },
-    { label: "Gallery", to: "/admin/gallery", icon: "lucide:image" },
-    { label: "Contacts", to: "/admin/#", icon: "lucide:mail" },
-    { label: "Settings", to: "/admin/#", icon: "lucide:settings-2" }
-  ]
+  const navItems = useActivePageLink([
+    { label: "Overview", link: "/admin", icon: "lucide:house" },
+    { label: "Articles", link: "/admin/articles", icon: "lucide:newspaper" },
+    { label: "Gallery", link: "/admin/gallery", icon: "lucide:image" },
+    { label: "Contacts", link: "/admin/#", icon: "lucide:mail" },
+    { label: "Settings", link: "/admin/#", icon: "lucide:settings-2" }
+  ], "/admin")
+
+  const isSidebarActive = ref(false)
+  useNuxtApp().hook("page:finish", () => {
+    isSidebarActive.value = false
+  })
 </script>
 
 <template>
-  <div
-    w="full"
-    flex="~"
-    h="screen"
-    overflow="hidden"
-  >
-    <!-- Side Panel -->
-    <aside
-      w="250px"
-      h="full"
-      border-r
-      p="5"
-    >
+  <div w="full">
+    <!-- Define Inner Side Panel Content -->
+    <DefineTemplate>
       <UiScrollArea class="size-full">
-        <PageLogo />
-
         <ul
           w="full"
           flex="~ col gap-2"
           mt="10"
         >
           <li v-for="item in navItems">
-            <nuxt-link
-              class="w-full justify-start bg-background gap-5"
+            <ui-button
+              class="w-full justify-start gap-5"
               :icon="item.icon"
-              :to="item.to"
-              variant="ghost"
-            >
-              {{ item.label }}
-            </nuxt-link>
+              :to="item.link"
+              :text="item.label"
+              :variant="item.isActive ? 'default' : 'ghost'"
+            />
           </li>
         </ul>
       </UiScrollArea>
-    </aside>
+    </DefineTemplate>
 
-    <!-- Main Content -->
-    <div flex="1 ~ col">
-      <div
-        p="x7 y3"
-        border-b
+    <div
+      w="full"
+      flex="~"
+      h="screen"
+      overflow="hidden"
+    >
+      <!-- Desktop Side Panel -->
+      <aside
+        hidden
+        sm="block"
+        w="250px"
+        h="full"
+        border-r
+        p="5"
       >
-        <p
-          font="bold"
-          case="capital"
-        >
-          {{ pageTitle }}
-        </p>
+        <PageLogo />
+
+        <!-- Use Side Panel Content -->
+        <ReuseTemplate />
+      </aside>
+
+      <!-- Main Content -->
+      <div flex="1 ~ col">
+        <div class="flex-horizontal p-(x7 y3) border-b">
+          <ui-text class="capitalize font-bold">
+            {{ pageTitle }}
+          </ui-text>
+
+          <!-- Mobile Side Panel Toggle -->
+          <ui-icon
+            sm="hidden"
+            as="button"
+            label="Menu Toggle Button"
+            type="outline"
+            name="tabler:menu-deep"
+            @click="isSidebarActive = true"
+          />
+        </div>
+        <!-- Main Children Page Content -->
+        <div class="flex-1 p-7 overflow-y-auto">
+          <NuxtPage />
+        </div>
       </div>
 
-      <div
-        flex="1"
-        p="7"
-        overflow-y="auto"
+      <!-- Notification -->
+      <ClientOnly>
+        <UiNotivue />
+      </ClientOnly>
+
+      <!-- Mobile Side Panel -->
+      <LazyUiSheet
+        v-model:open="isSidebarActive"
+        class="w-sm"
       >
-        <NuxtPage />
-      </div>
+        <LazyUiSheetContent>
+          <template #content>
+            <LazyUiSheetX icon="tabler:x" />
+            <div
+              class="w-full"
+              orientation="vertical"
+            >
+              <!-- Use Side Panel Content -->
+              <ReuseTemplate />
+            </div>
+          </template>
+        </LazyUiSheetContent>
+      </LazyUiSheet>
     </div>
-
-    <ClientOnly>
-      <UiNotivue />
-    </ClientOnly>
   </div>
 </template>

@@ -10,9 +10,6 @@
     <!-- Who We Are, Our Mission, Vision and Goals -->
     <HomepageVisionMissionGoals />
 
-    <!-- What We Do -->
-    <!-- <HomepageWhatWeDo /> -->
-
     <!-- Testimonials -->
     <HomepageTestimonials />
 

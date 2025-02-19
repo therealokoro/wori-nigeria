@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { Article } from "~~/shared/types"
+import type { IArticleWithLink } from "~~/shared/types"
 
-const props = defineProps<{ article: Article, main?: boolean }>()
-const el = computed(() => props.main ? resolveComponent("NuxtLink") : "div")
+const props = defineProps<{ article: IArticleWithLink, showButton?: boolean }>()
+const el = computed(() => props.showButton ? "div" : resolveComponent("NuxtLink"))
 </script>
 
 <template>
@@ -11,9 +11,10 @@ const el = computed(() => props.main ? resolveComponent("NuxtLink") : "div")
     :to="article.link"
     class="block group relative overflow-hidden"
   >
-    <NuxtImg
+    <nuxt-img
       :src="article.coverImage"
       image="cover"
+      provider="local"
       transition="~ ease-in-out"
       group-hover="scale-107"
     />
@@ -42,12 +43,12 @@ const el = computed(() => props.main ? resolveComponent("NuxtLink") : "div")
             type="caption"
             class="text-gray-300"
           >
-            {{ article.createdAt }}
+            {{ formatDate(article.createdAt) }}
           </ui-text>
           <ui-button
-            v-if="!main"
+            v-if="showButton"
             text="Learn More"
-            to="/blog/45678ibjh"
+            :to="article.link"
           />
         </div>
       </div>

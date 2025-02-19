@@ -1,12 +1,10 @@
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <Page
     admin
     title="Create Article"
   >
-    Create
+    <ArticlesCreateEdit action="create" />
   </Page>
 </template>

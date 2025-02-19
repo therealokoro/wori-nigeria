@@ -10,7 +10,7 @@ import timeline from "~/data/timeline.json"
     <PageSection>
       <ui-text
         type="heading"
-        class="text-center font-extrabold mb-10"
+        class="text-center font-extrabold mb-15"
       >
         About WORI - The History
       </ui-text>

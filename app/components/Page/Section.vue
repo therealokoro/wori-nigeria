@@ -4,7 +4,7 @@
   const props = defineProps<{
     class?: string
     title?: string
-    description?: string
+    description?: string | null
     meta?: string
     titleLeft?: string
   }>()

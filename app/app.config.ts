@@ -2,9 +2,9 @@
 export default defineAppConfig({
   navigation: [
     { label: "Home", link: "/" },
-    { label: "Blog", link: "/blog" },
+    { label: "Articles", link: "/articles" },
     { label: "Our Services", link: "/services" },
-    { label: "Gallery", link: "/#gallery" },
+    { label: "Gallery", link: "/gallery" },
     { label: "Contacts", link: "/contact-us" },
     {
       label: "About Us",

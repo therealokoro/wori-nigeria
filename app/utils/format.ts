@@ -1,6 +1,6 @@
 export const formatDate = (
   date: string | Date,
-  suffix = "Published, ",
+  suffix = "Published, "
 ): string => {
   const parsedDate = new Date(date)
   if (isNaN(parsedDate.getTime())) {
@@ -13,7 +13,7 @@ export const formatDate = (
       month: "long",
       day: "numeric",
       hour: "2-digit",
-      minute: "2-digit",
+      minute: "2-digit"
     })
   )
 }

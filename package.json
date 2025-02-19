@@ -7,27 +7,41 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
+    "@hebilicious/vue-query-nuxt": "^0.3.0",
     "@morev/vue-transitions": "^3.0.5",
     "@nuxt/devtools": "2.0.0-beta.3",
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/image": "^1.9.0",
+    "@nuxthub/core": "^0.8.17",
+    "@pinia/colada": "^0.13.6",
+    "@pinia/colada-nuxt": "^0.0.5",
+    "@pinia/nuxt": "^0.10.1",
+    "@tanstack/vue-query": "^5.66.4",
     "@unocss/nuxt": "^65.4.3",
     "@unocss/reset": "^65.4.3",
     "@vee-validate/nuxt": "^4.15.0",
+    "@vee-validate/valibot": "^4.15.0",
+    "@vueup/vue-quill": "^1.2.0",
     "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.39.2",
+    "drizzle-valibot": "^0.4.0",
     "notivue": "^2.4.5",
     "nuxt": "^3.15.3",
     "nuxt-marquee": "1.0.4",
     "radix-vue": "^1.9.12",
     "string-ts": "^2.2.0",
     "tailwind-variants": "^0.3.1",
+    "typeid-js": "^1.2.0",
     "unocss": "^65.4.3",
     "unocss-preset-animations": "^1.1.1",
     "unocss-preset-shadcn": "^0.3.2",
+    "valibot": "1.0.0-rc.0",
     "vue": "latest",
+    "vue-easy-lightbox": "^1.19.0",
     "vue-router": "latest"
   },
   "devDependencies": {
@@ -38,8 +52,11 @@
     "@nuxt/icon": "^1.10.3",
     "@vueuse/core": "^12.5.0",
     "@vueuse/nuxt": "^12.5.0",
+    "drizzle-kit": "^0.30.4",
     "eslint": "^9.19.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "ufo": "^1.5.4",
+    "wrangler": "^3.107.3"
   },
   "packageManager": "pnpm@9.15.4"
 }

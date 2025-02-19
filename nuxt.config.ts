@@ -4,13 +4,17 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/fonts",
+    // "@pinia/nuxt",
     "@unocss/nuxt",
     "@vueuse/nuxt",
     "notivue/nuxt",
     "nuxt-marquee",
     "@nuxt/eslint",
+    "@nuxthub/core",
     "@nuxt/devtools",
+    // "@pinia/colada-nuxt",
     "@vee-validate/nuxt",
+    "@hebilicious/vue-query-nuxt",
     "@morev/vue-transitions/nuxt"
   ],
 
@@ -43,10 +47,26 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   compatibilityDate: "2024-11-01",
 
+  hub: {
+    database: true,
+    cache: true,
+    blob: true
+  },
+
   eslint: {
     config: {
       stylistic: {
         quotes: "double"
+      }
+    }
+  },
+
+  image: {
+    format: ["webp"],
+    providers: {
+      myProvider: {
+        name: "local",
+        provider: "./app/lib/provides/image.ts"
       }
     }
   }

@@ -29,7 +29,7 @@ export default defineConfig({
     "flex-vertical": "flex flex-col justify-between",
     "f-container": "container mx-auto px-1rem md:px-2rem",
     "image-cover": "object-cover size-full",
-    "image-overlay": "bg-gradient-(to-b from-gray-500/50 from-0 to-100 to-zinc-950)"
+    "image-overlay": "bg-gradient-(to-b from-gray-500/50 to-zinc-950) from-0 to-100"
   },
   theme: {
     fontFamily: {

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+  import type { NuxtError } from "#app"
+
   const {
     title,
     description,
@@ -10,6 +12,7 @@
     contain?: boolean
     admin?: boolean
     spacing?: string
+    error?: NuxtError<any>
   }>()
 
   useSeoMeta({
@@ -33,8 +36,15 @@
       <slot name="hero" />
     </div>
 
+    <!-- Render Error Page -->
+    <PageError
+      v-if="error"
+      :error
+    />
+
     <!-- Acutal Page Content -->
     <main
+      v-else
       flex="1"
       :class="[
         contain ? 'f-container' : 'w-full',

@@ -2,8 +2,8 @@
 
 <template>
   <Page
-    admin
     title="Articles"
+    admin
   >
     <div>
       <ui-button
@@ -13,9 +13,6 @@
       />
     </div>
 
-    <!-- <ArticlesListGrid
-      :pagination="false"
-      admin
-    /> -->
+    <ArticlesListGrid admin />
   </Page>
 </template>
