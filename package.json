@@ -1,6 +1,9 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "wori-nigeria",
+  "description": "Official Website for WORI",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Okoro Redemption",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
