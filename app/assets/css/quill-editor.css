@@ -131,7 +131,7 @@
     --uno: rounded-b-md border-border;
   }
   .ql-editor {
-    --uno: min-h-[150px];
+    --uno: min-h-[150px] max-h-[400px];
     .ql-font-monospace {
       --uno: font-mono;
     }

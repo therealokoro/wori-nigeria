@@ -7,7 +7,7 @@ const useIdFunction = () => useId()!
 <template>
   <ConfigProvider :use-id="useIdFunction">
     <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator color="#DA94B2" />
+    <NuxtLoadingIndicator color="#1B1F28" />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
