@@ -23,7 +23,7 @@
     <UiContainer>
       <div
         v-if="title"
-        class="mb-10 max-w-70vw"
+        class="mb-10 md:max-w-70vw"
         :text="titleLeft ? 'left' : 'center'"
       >
         <ui-text type="title">{{ title }}</ui-text>

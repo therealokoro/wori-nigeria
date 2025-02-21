@@ -29,6 +29,7 @@ const nextArticles = computed(() => data.value!.nextArticles)
             <NuxtImg
               :src="article.coverImage"
               image="cover"
+              densities="x1"
             />
           </div>
 

@@ -18,7 +18,7 @@ export default defineEventHandler(async (e) => {
   // validate and upload the cover image to server if provided by user in client
   let cover: BlobObject | null = null
   if (image && image instanceof File) {
-    cover = await uploadArticleImage(image)
+    cover = await uploadArticleImage(image, id)
   }
 
   // insert the article

@@ -1,3 +1,4 @@
+import { typeid } from "typeid-js"
 import { kebabCase, capitalize } from "string-ts"
 import { Articles } from "~~/server/database/models"
 import { fetchArticle, uploadArticleImage } from "~~/server/services/articles"
@@ -21,8 +22,10 @@ export default defineEventHandler(async (e) => {
     })
   }
 
+  // create ID for the article
+  const articleId = typeid().toString()
   // validate and upload the cover image to server in the image folder
-  const cover = await uploadArticleImage(image)
+  const cover = await uploadArticleImage(image, articleId)
 
   // insert the article
   const data = await useDb()
@@ -30,6 +33,7 @@ export default defineEventHandler(async (e) => {
     .values({
       content,
       description,
+      id: articleId,
       slug: kebabCase(title),
       title: capitalize(title),
       coverImage: cover.pathname

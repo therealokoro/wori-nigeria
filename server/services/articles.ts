@@ -20,8 +20,8 @@ export async function fetchNextArticles(cursor?: number, pageSize = 3) {
     .orderBy(asc(Articles.id)) // ordering
 }
 
-export async function uploadArticleImage(image: File) {
+export async function uploadArticleImage(image: File, id: string) {
   // validate and upload the cover image to server in the image folder
   ensureBlob(image, { maxSize: "1MB", types: ["image"] })
-  return await hubBlob().put(image.name, image, { prefix: "images" })
+  return await hubBlob().put(id, image, { prefix: "images" })
 }

@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+const prerenderRoutes = ["/about-us", "/contact-us", "/services", "/gallery"]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -41,8 +41,26 @@ export default defineNuxtConfig({
     "~/assets/css/main.css"
   ],
 
+  routeRules: {
+    "/articles": { isr: 3600 },
+    "/admin/**": { ssr: false }
+  },
+
   future: { compatibilityVersion: 4 },
   compatibilityDate: "2024-11-01",
+
+  nitro: {
+    experimental: { openAPI: true },
+    prerender: {
+      crawlLinks: true,
+      routes: prerenderRoutes
+    },
+    cloudflare: {
+      pages: {
+        routes: { exclude: prerenderRoutes }
+      }
+    }
+  },
 
   hub: {
     database: true,
