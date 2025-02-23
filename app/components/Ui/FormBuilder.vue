@@ -107,37 +107,37 @@
 
 <script lang="ts">
 export type FormBuilder = {
-    description?: string
-    hint?: string
-    disabled?: boolean
-    label?: string
-    name: string
-    placeholder?: string
-    required?: boolean
-    type?: string
-    value?: any
-    rules?: any
-    class?: any
-    slot?: string
-    wrapperClass?: any
-    renderIf?: () => boolean
-    options?: any[]
-    variant:
-      | "Checkbox"
-      | "Input"
-      | "Divider"
-      | "FileInput"
-      | "Select"
-      | "Textarea"
-      | "PinInput"
-      | "RadioGroup"
-    [key: string]: any
-  }
-  export type FormBuilderProps = {
-    fields: FormBuilder[]
-  }
+  description?: string
+  hint?: string
+  disabled?: boolean
+  label?: string
+  name: string
+  placeholder?: string
+  required?: boolean
+  type?: string
+  value?: any
+  rules?: any
+  class?: any
+  slot?: string
+  wrapperClass?: any
+  renderIf?: () => boolean
+  options?: any[]
+  variant:
+    | "Checkbox"
+    | "Input"
+    | "Divider"
+    | "FileInput"
+    | "Select"
+    | "Textarea"
+    | "PinInput"
+    | "RadioGroup"
+  [key: string]: any
+}
+export type FormBuilderProps = {
+  fields: FormBuilder[]
+}
 
-  type SelectOptions = { label: string, value: any, disabled?: boolean }[]
+type SelectOptions = { label: string, value: any, disabled?: boolean }[]
 </script>
 
 <script lang="ts" setup>

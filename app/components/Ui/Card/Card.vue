@@ -8,32 +8,36 @@
       <slot name="image" />
       <slot name="header" />
 
-      <UiCardContent :class="contentClass">
-        <slot name="content">
-          <div class="flex flex-col space-y-3">
-            <slot name="title">
-              <UiCardTitle
-                v-if="title || $slots.title"
-                class="card-title"
-                :title="title"
-              />
-            </slot>
-            <slot name="description">
-              <UiCardDescription
-                v-if="description || $slots.description"
-                class="card-description"
-                :description="description"
-              />
-            </slot>
-
-            <slot name="meta">
-              <p class="card-meta text-sm/5 text-muted-foreground">
-                {{ meta }}
-              </p>
-            </slot>
-          </div>
+      <div
+        v-if="title"
+        class="flex flex-col space-y-3 px-7 pt-7"
+      >
+        <slot name="title">
+          <UiCardTitle
+            v-if="title || $slots.title"
+            class="card-title"
+            :title="title"
+          />
         </slot>
+        <slot name="description">
+          <UiCardDescription
+            v-if="description || $slots.description"
+            class="card-description"
+            :description="description"
+          />
+        </slot>
+
+        <slot name="meta">
+          <p class="card-meta text-sm/5 text-muted-foreground">
+            {{ meta }}
+          </p>
+        </slot>
+      </div>
+
+      <UiCardContent :class="contentClass">
+        <slot name="content" />
       </UiCardContent>
+
       <slot name="footer" />
     </slot>
   </Primitive>

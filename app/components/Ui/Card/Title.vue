@@ -25,6 +25,6 @@
   );
 
   const styles = tv({
-    base: "font-semibold leading-5 tracking-tight truncate",
+    base: "font-bold text-lg leading-5 tracking-tight truncate",
   });
 </script>

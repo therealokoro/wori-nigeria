@@ -30,6 +30,6 @@
   const forwarded = reactiveOmit(props, "class", "hint")
 
   const styles = tv({
-    base: "flex items-center justify-between font-semibold leading-none hover:cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm sm:text-base"
+    base: "flex items-center justify-between font-semibold leading-none hover:cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm"
   })
 </script>

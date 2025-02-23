@@ -41,6 +41,14 @@ export default defineNuxtConfig({
     "~/assets/css/main.css"
   ],
 
+  runtimeConfig: {
+    public: {
+      adminAuthName: process.env.ADMIN_AUTH_NAME,
+      adminAuthEmail: process.env.ADMIN_AUTH_EMAIL,
+      adminAuthPassword: process.env.ADMIN_AUTH_PASSWORD
+    }
+  },
+
   routeRules: {
     "/articles": { isr: 3600 },
     "/admin/**": { ssr: false }
@@ -50,7 +58,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
 
   nitro: {
-    experimental: { openAPI: true },
+    experimental: { openAPI: true, tasks: true },
     prerender: {
       crawlLinks: true,
       routes: prerenderRoutes
@@ -65,7 +73,8 @@ export default defineNuxtConfig({
   hub: {
     database: true,
     cache: true,
-    blob: true
+    blob: true,
+    kv: true
   },
 
   eslint: {
@@ -77,6 +86,7 @@ export default defineNuxtConfig({
   },
 
   image: {
+    quality: 75,
     format: ["webp"],
     providers: {
       myProvider: {

@@ -1,12 +1,20 @@
 <script lang="ts" setup>
-  definePageMeta({ layout: "empty" })
+  definePageMeta({
+    layout: "empty",
+    auth: {
+      only: "user",
+      redirectGuestTo: "/"
+    }
+  })
+
   useSeoMeta({
-    titleTemplate: "%s | Admin Dashboard - ACHEI",
+    titleTemplate: "%s | Admin Dashboard - WORI",
     description: "Administrative Dashboard"
   })
 
   const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
   const pageTitle = computed(() => useRoute().path.split("/")[2] || "Dashboard")
+
   const navItems = useActivePageLink([
     { label: "Overview", link: "/admin", icon: "lucide:house" },
     { label: "Articles", link: "/admin/articles", icon: "lucide:newspaper" },
@@ -19,6 +27,8 @@
   useNuxtApp().hook("page:finish", () => {
     isSidebarActive.value = false
   })
+
+  const signOut = async () => await useAuth().signOut({ redirectTo: "/" })
 </script>
 
 <template>
@@ -39,6 +49,16 @@
               :text="item.label"
               :variant="item.isActive ? 'default' : 'ghost'"
             />
+          </li>
+          <li>
+            <UiButton
+              class="w-full justify-start gap-5 bg-background"
+              icon="lucide:door-open"
+              variant="ghost"
+              @click="signOut"
+            >
+              Logout
+            </UiButton>
           </li>
         </ul>
       </UiScrollArea>
