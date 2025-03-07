@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { objectToFormData } from "@octetstream/object-to-form-data"
 import { UpdateAlbumSchema } from "~~/shared/schemas"
 
 const $album = useAlbumStore()
@@ -37,7 +36,6 @@ async function handleDeleteAlbum() {
   catch (error: any) {
     toast.error(error.data.message)
   }
-  
 }
 </script>
 
