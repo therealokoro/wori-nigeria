@@ -1,4 +1,4 @@
-const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
+// const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -68,12 +68,12 @@ export default defineNuxtConfig({
   nitro: {
     experimental: { openAPI: true, tasks: true },
     prerender: {
-      crawlLinks: true,
-      routes: prerenderRoutes
+      crawlLinks: true
+      // routes: prerenderRoutes
     },
     cloudflare: {
       pages: {
-        routes: { exclude: prerenderRoutes }
+        // routes: { exclude: prerenderRoutes }
       }
     }
   },
