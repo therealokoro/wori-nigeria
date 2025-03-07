@@ -1,5 +1,3 @@
-import { objectToFormData } from "@octetstream/object-to-form-data"
-
 export type ArticleSubmitActions = "edit" | "create"
 
 const msgMap: Record<ArticleSubmitActions, string[]> = {
