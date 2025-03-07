@@ -1,4 +1,4 @@
-const prerenderRoutes = ["/about-us", "/contact-us", "/services", "/gallery"]
+const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@unocss/nuxt",
     "@vueuse/nuxt",
+    "@pinia/nuxt",
     "notivue/nuxt",
     "nuxt-marquee",
     "@nuxt/eslint",
@@ -14,6 +15,13 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
     "@morev/vue-transitions/nuxt"
   ],
+
+  $production: {
+    routeRules: {
+      "/api/albums/all": { swr: 60 * 60 * 1 },
+      "/api/articles/all": { swr: 60 * 60 * 1 }
+    }
+  },
 
   imports: {
     dirs: ["./constants"],
@@ -51,7 +59,10 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/articles": { isr: 3600 },
-    "/admin/**": { ssr: false }
+    "/admin/**": { ssr: false },
+    "/gallery": {
+      cache: {}
+    }
   },
 
   future: { compatibilityVersion: 4 },

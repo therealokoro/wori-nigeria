@@ -1,7 +1,6 @@
 import type { BlobObject } from "@nuxthub/core"
 import { kebabCase, capitalize } from "string-ts"
 import { Articles } from "~~/server/database/models"
-import { uploadArticleImage } from "~~/server/services/articles"
 
 export default defineEventHandler(async (e) => {
   const fd = await readFormData(e)
@@ -18,7 +17,7 @@ export default defineEventHandler(async (e) => {
   // validate and upload the cover image to server if provided by user in client
   let cover: BlobObject | null = null
   if (image && image instanceof File) {
-    cover = await uploadArticleImage(image, id)
+    cover = await uploadImage(image, id, "articles")
   }
 
   // insert the article

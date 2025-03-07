@@ -16,3 +16,16 @@ export const Articles = sqliteTable("articles", {
     .notNull()
     .default(sql`(current_timestamp)`)
 })
+
+export const Albums = sqliteTable("album", {
+  id: text("id", { length: 36 })
+    .primaryKey()
+    .notNull()
+    .$defaultFn(() => typeid().toString()),
+  title: text("title", { length: 500 }).notNull().unique(),
+  slug: text("slug", { length: 500 }).notNull().unique(),
+  images: text({ mode: "json" }).$type<string[]>().notNull(),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`(current_timestamp)`)
+})

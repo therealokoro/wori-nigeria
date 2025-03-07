@@ -24,7 +24,7 @@
       <div
         v-if="title"
         class="mb-10 md:max-w-70vw"
-        :text="titleLeft ? 'left' : 'center'"
+        :class="titleLeft ? 'text-left' : 'text-center mx-auto'"
       >
         <ui-text type="title">{{ title }}</ui-text>
         <ui-text

@@ -1,10 +1,7 @@
 <script lang="ts" setup>
   definePageMeta({
     layout: "empty",
-    auth: {
-      only: "user",
-      redirectGuestTo: "/"
-    }
+    auth: { only: "user", redirectGuestTo: "/login" }
   })
 
   useSeoMeta({

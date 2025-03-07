@@ -4,6 +4,7 @@
     :aria-label="label"
     :class="styles().base({ class: props.class, type, size })"
     :disabled="disabled || loading"
+    type="button"
     v-bind="forwarded"
   >
     <slot>
@@ -86,6 +87,6 @@
   })
 
   const forwarded = useForwardProps(
-    reactiveOmit(props, "class", "name", "size", "as", "loading", "disabled")
+    reactiveOmit(props, "class", "name", "size", "as", "loading", "disabled", "type")
   )
 </script>

@@ -1,21 +1,5 @@
 <script lang="ts" setup>
-const stats = [
-  {
-    value: "100+",
-    label: "Communiiites & Homes",
-    body: "We have visited over 100+ homes and communiiites"
-  },
-  {
-    value: "20",
-    label: "Communiiites & Homes",
-    body: "We have visited over 100+ homes and communiiites"
-  },
-  {
-    value: "250",
-    label: "Communiiites & Homes",
-    body: "We have visited over 100+ homes and communiiites"
-  }
-]
+import stats from "~/data/stats.json"
 </script>
 
 <template>
@@ -46,9 +30,9 @@ const stats = [
             class="text-primary"
             type="heading"
           >
-            {{ i.value }}
+            {{ i.figure }}
           </ui-text>
-          <ui-text font="semibold">{{ i.label }}</ui-text>
+          <ui-text font="semibold">{{ i.title }}</ui-text>
           <ui-text type="small">{{ i.body }}</ui-text>
         </div>
       </div>

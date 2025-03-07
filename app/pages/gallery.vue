@@ -1,13 +1,11 @@
 <script lang="ts" setup>
   import VueEasyLightbox, { useEasyLightbox } from "vue-easy-lightbox"
 
-  const images = Array.from({ length: 20 }).map((c, i) => ({
-    title: "Images from our outreach and events",
-    src: `/gallery/img-${i}.jpg`
-  }))
+  const { data } = await useFetch("/api/albums/all")
+  const images = computed(() => data.value ? data.value : [])
 
   const { show, onHide, visibleRef, indexRef } = useEasyLightbox({
-    imgs: images.map(i => i.src),
+    imgs: images.value.map(i => i.src),
     initIndex: 0
   })
 </script>
@@ -23,7 +21,8 @@
       description="View pictures from our programs, events and outreaches"
     >
       <div
-        w="full"
+        v-if="images.length"
+        class="w-full"
         grid="~ cols-2 md:cols-3 lg:cols-4 gap-5"
       >
         <div
@@ -44,10 +43,18 @@
           />
         </div>
       </div>
+
+      <div
+        v-else
+        class="w-full flex-center"
+      >
+        <ui-text>Looks like there are no images at the moment</ui-text>
+      </div>
     </PageSection>
 
     <ClientOnly>
       <vue-easy-lightbox
+        v-if="images.length"
         teleport="body"
         :visible="visibleRef"
         :imgs="images"

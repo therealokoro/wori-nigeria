@@ -8,7 +8,8 @@
       enqueue: true,
       pauseOnHover: true,
       pauseOnTabChange: true,
-      teleportTo: "body"
+      teleportTo: "body",
+      notifications: { global: { duration: 3500 } }
     })
   })
 </script>
@@ -16,9 +17,10 @@
 <template>
   <Notivue v-slot="item">
     <div
-      role="alert"
-      :data-notivue="item.type"
       :id="item.id"
+      role="alert"
+      data-notivue-toast
+      :data-notivue="item.type"
       min-w="300px"
       flex="horizontal"
       bg="background"
@@ -27,10 +29,18 @@
       border
       p="3"
     >
-      <div flex="~ gap-2" items="center">
+      <div
+        flex="~ gap-2"
+        items="center"
+      >
         <div class="icon" />
 
-        <p text="sm foreground" font="semibold">{{ item.message }}</p>
+        <p
+          text="sm foreground"
+          font="semibold"
+        >
+          {{ item.message }}
+        </p>
         <span class="sr-only">{{ item.type }}</span>
       </div>
 

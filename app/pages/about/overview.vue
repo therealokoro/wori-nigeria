@@ -24,6 +24,23 @@
           At WORI, our mission is to create a society where women and marginalized populations can fully exercise their rights and live lives free from discrimination and violence. We are dedicated to advocating for gender equality, raising awareness about women's rights issues, and providing support to those who have been affected by gender-based violence and discrimination.
         </ui-text>
 
+        <ui-text type="subtitle">Our Goals</ui-text>
+        <ul class="list">
+          <li><b>Empowerment and Advocacy:</b> Strengthen the voices of women and vulnerable groups through advocacy, capacity-building, and access to resources, ensuring their rights are recognized and respected.</li>
+          <li><b>Education and Awareness:</b> Promote awareness and education on climate change and its impact on marginalized populations, fostering understanding and action at community and policy levels.</li>
+          <li><b>Access to Resources:</b> Facilitate access to financial and educational resources for women, children, and persons with disabilities to enable them to engage in sustainable practices and climate action.</li>
+          <li><b>Health and Well-being:</b> Support initiatives that address the health needs of sickle cell patients and other vulnerable populations, ensuring they have access to necessary care and support.</li>
+          <li><b>Partnerships and Collaboration:</b> Build strategic partnerships with local and international organizations to amplify efforts in supporting vulnerable populations and addressing climate change in accordance with the Sustainable Development Goals (SDGs).</li>
+        </ul>
+
+        <ui-text type="subtitle">Our Targets</ui-text>
+        <ul class="list">
+          <li><b>Increase Participation:</b> Ensure at least 50% representation of women and vulnerable groups in local climate action committees by 2025.</li>
+          <li><b>Training and Capacity Building:</b> Conduct training programs for at least 1,000 women and vulnerable individuals annually on sustainable practices and climate resilience.</li>
+          <li><b>Health Support Initiatives:</b> Launch health camps and Gender-based violence awareness programs focused on sickle cell and disability care, Mental health on sexual Reproductive health Rights reaching at least 5,000 individuals each year.</li>
+          <li><b>Policy Advocacy:</b> Influence the development and implementation of at least three local or national policies that protect the rights of women and vulnerable populations in the context of climate change by 2030.</li>
+        </ul>
+
         <ui-text type="subtitle">Our Services</ui-text>
         <ui-text class="mt-5">
           With a team of dedicated staff and volunteers, WORI has the capacity to provide a range of services to support our mission. These include:

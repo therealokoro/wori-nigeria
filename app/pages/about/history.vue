@@ -15,19 +15,24 @@ import timeline from "~/data/timeline.json"
         About WORI - The History
       </ui-text>
 
-      <div class="max-w-4xl mx-auto px-5">
-        <!-- Time line content -->
-        <ol class="flex-1 relative border-s border-gray-200">
-          <li
-            v-for="item in timeline"
-            class="mb-10 ms-4"
-          >
-            <div class="timeline__dot" />
-            <ui-text type="subtitle">{{ item.title }}</ui-text>
-            <ui-text class="mt-3 text-justify">{{ item.content }}</ui-text>
-          </li>
-        </ol>
-      </div>
+      <!-- Time line content -->
+      <UiTimeline class="md:w-70vw mx-auto px-5">
+        <UiTimelineItem
+          v-for="item in timeline"
+          :key="item.id"
+          :step="item.id"
+        >
+          <UiTimelineHeader>
+            <UiTimelineSeparator />
+            <UiTimelineTitle class="-mt-0.5 text-base font-bold">{{ item.title }}</UiTimelineTitle>
+            <UiTimelineIndicator />
+          </UiTimelineHeader>
+          <UiTimelineContent>
+            <ui-text>{{ item.content }}</ui-text>
+            <UiTimelineDate class="mb-0 mt-2 text-primary">{{ item.date }}</UiTimelineDate>
+          </UiTimelineContent>
+        </UiTimelineItem>
+      </UiTimeline>
     </PageSection>
   </Page>
 </template>
