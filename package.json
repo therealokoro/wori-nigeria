@@ -21,6 +21,7 @@
     "@nuxt/image": "^1.9.0",
     "@nuxthub/core": "^0.8.18",
     "@pinia/nuxt": "^0.10.1",
+    "@unhead/vue": "2.0.0-rc.7",
     "@unocss/nuxt": "^66.0.0",
     "@unocss/reset": "^66.0.0",
     "@vee-validate/nuxt": "^4.15.0",
