@@ -59,10 +59,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/articles": { isr: 3600 },
-    "/admin/**": { ssr: false },
-    "/gallery": {
-      cache: {}
-    }
+    "/admin/**": { ssr: false }
   },
 
   future: { compatibilityVersion: 4 },
