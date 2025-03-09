@@ -29,7 +29,7 @@ declare module "vue-router" {
 
 export default defineNuxtRouteMiddleware(async (to) => {
   // If auth is disabled, skip middleware
-  if (to.meta?.auth === false) {
+  if (!to.meta?.auth) {
     return
   }
 
