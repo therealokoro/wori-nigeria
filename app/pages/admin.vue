@@ -16,8 +16,8 @@
     { label: "Overview", link: "/admin", icon: "lucide:house" },
     { label: "Articles", link: "/admin/articles", icon: "lucide:newspaper" },
     { label: "Gallery", link: "/admin/gallery", icon: "lucide:image" },
-    { label: "Contacts", link: "/admin/#", icon: "lucide:mail" },
-    { label: "Settings", link: "/admin/#", icon: "lucide:settings-2" }
+    { label: "Contacts", link: "/admin/contacts", icon: "lucide:mail" }
+    // { label: "Settings", link: "/admin/#", icon: "lucide:settings-2" }
   ], "/admin")
 
   const isSidebarActive = ref(false)
@@ -104,11 +104,6 @@
           <NuxtPage />
         </div>
       </div>
-
-      <!-- Notification -->
-      <ClientOnly>
-        <UiNotivue />
-      </ClientOnly>
 
       <!-- Mobile Side Panel -->
       <LazyUiSheet

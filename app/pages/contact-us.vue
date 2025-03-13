@@ -1,5 +1,22 @@
 <script lang="ts" setup>
+import { CreateMessageSchema } from "~~/shared/schemas"
+
 const { contacts, email, socialLinks } = useAppConfig().info
+const form = useForm({ validationSchema: toTypedSchema(CreateMessageSchema) })
+
+const submitHandler = form.handleSubmit(async (body) => {
+  console.log(body)
+  const toast = $toast.promise("Submitting your message, please wait...")
+  try {
+    console.log("0 ddwdwwde")
+    await $fetch("/api/messages/send", { body, method: "POST" })
+    toast.success("Your message was sent successfully")
+    form.resetForm()
+  }
+ catch (error: any) {
+    toast.error(error.data.message)
+  }
+})
 </script>
 
 <template>
@@ -75,7 +92,7 @@ const { contacts, email, socialLinks } = useAppConfig().info
       <div class="flex-1">
         <UiCard content-class="sm:p-10">
           <template #content>
-            <form class="">
+            <form @submit="submitHandler">
               <fieldset class="grid gap-6">
                 <UiVeeInput
                   label="First name"
@@ -96,17 +113,11 @@ const { contacts, email, socialLinks } = useAppConfig().info
                   name="email"
                   required
                 />
-                <UiVeeInput
-                  label="Phone"
-                  placeholder="Enter your phone number here"
-                  type="tel"
-                  name="phone"
-                />
                 <UiVeeTextarea
                   :rows="7"
                   label="Message"
                   placeholder="Leave us a message here..."
-                  name="message"
+                  name="body"
                   required
                 />
                 <UiButton

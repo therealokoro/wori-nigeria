@@ -2,7 +2,7 @@
 import type { IAlbum } from "~~/shared/types"
 
 const $album = useAlbumStore()
-const { getCurrAlbumList: albums } = storeToRefs($album)
+const albums = computed(() => $album.getCurrAlbumList)
 onBeforeMount(async () => await $album.fetchAlbums())
 
 const initializeEdit = (album: IAlbum) => {

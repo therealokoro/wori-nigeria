@@ -6,12 +6,13 @@ export default defineEventHandler(async (e) => {
   const fileUrl = query.fileUrl?.toString()
   const id = query.id?.toString()
 
-  if (!fileUrl || id) throw createError({ message: "Please select an image to delete" })
+  if (!fileUrl || !id) throw createError({ message: "Please select an image to delete" })
   try {
     const album = await fetchAlbum({ id })
     if (!album) throw createError({ message: "Could not delete the image" })
 
     await hubBlob().delete(fileUrl)
+    console.log("image deleted from server")
     const imgList = album.images.filter(c => c !== fileUrl)
     await useDb()
       .update(Albums)

@@ -24,6 +24,7 @@ export const useAlbumStore = defineStore("auth", {
 
     async fetchAlbums() {
       const res = await $fetch("/api/albums/all")
+      this.albumList = res
       return res
     },
 

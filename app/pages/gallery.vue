@@ -2,7 +2,16 @@
   import VueEasyLightbox, { useEasyLightbox } from "vue-easy-lightbox"
 
   const { data } = await useFetch("/api/albums/all")
-  const images = computed(() => data.value ? data.value : [])
+
+  const images = data.reduce((acc: { title: string, src: string }[], item) => {
+    item.images.forEach((image) => {
+      acc.push({
+        title: item.title,
+        src: "/cdn/images/" + image
+      })
+    })
+    return acc
+  }, [])
 
   const { show, onHide, visibleRef, indexRef } = useEasyLightbox({
     imgs: images.value.map(i => i.src),

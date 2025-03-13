@@ -1,4 +1,6 @@
 import * as v from "valibot"
+import { createInsertSchema } from "drizzle-valibot"
+import { Messages } from "~~/server/database/models"
 
 export const ImageSchema = v.pipe(
   v.file("Please select an image file."),
@@ -44,4 +46,18 @@ export const ArticleSchema = v.object({
 export const EditArticleSchema = v.object({
   ...ArticleSchema.entries,
   coverImage: v.optional(ArticleSchema.entries.coverImage)
+})
+
+export const CreateMessageSchema = createInsertSchema(Messages, {
+  firstname: s => v.pipe(s, v.nonEmpty("Please enter your firstname")),
+  lastname: s => v.pipe(s, v.nonEmpty("Please enter your lastname")),
+  email: s => v.pipe(s, v.nonEmpty("Please enter your email")),
+  body: s => v.pipe(s, v.nonEmpty("Please enter your message"))
+})
+
+export const UpdateMessageSchema = v.object({
+  isReply: v.optional(v.boolean()),
+  isRead: v.optional(v.boolean()),
+  response: v.optional(v.string()),
+  id: v.pipe(v.string("Please select a message to reply"))
 })

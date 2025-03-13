@@ -11,5 +11,10 @@ const useIdFunction = () => useId()!
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+
+    <!-- Notification -->
+    <ClientOnly>
+      <UiNotivue />
+    </ClientOnly>
   </ConfigProvider>
 </template>

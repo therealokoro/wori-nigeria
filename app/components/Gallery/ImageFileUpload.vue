@@ -5,6 +5,8 @@ interface Props {
   name: string
 }
 
+const albumId = useRoute().params?.id.toString()
+
 const props = withDefaults(defineProps<Props>(), { count: 6 })
 
 // Reactive array for initial images that remain.
@@ -67,7 +69,7 @@ async function handleDelete(fileUrl: string) {
       // Delete image from server and remove it from current initial images.
       const msg = await $fetch<string>("/api/albums/delete/image", {
         method: "DELETE",
-        query: { fileUrl }
+        query: { fileUrl, id: albumId }
       })
 
       currentInitialImages.value.splice(initialIndex, 1)
