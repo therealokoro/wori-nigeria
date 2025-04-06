@@ -17,7 +17,7 @@ export default defineAppConfig({
     }
   ],
   info: {
-    sitename: "Women Rights Initiative",
+    sitename: "Women Right Initiative",
     url: "https://womenrightsinitiative.org",
     description: "The official website of Women Rights Initiative (WORI)",
     ogImageLink: "/wori-og-image.webp",
