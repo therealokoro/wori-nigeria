@@ -32,6 +32,7 @@
     "notivue": "^2.4.5",
     "nuxt": "^3.16.0",
     "nuxt-marquee": "1.0.4",
+    "nuxt-prepare": "^2.3.1",
     "pinia": "^3.0.1",
     "radix-vue": "^1.9.17",
     "string-ts": "^2.2.1",

@@ -1,7 +1,11 @@
 import { consola } from "consola"
 import { getMigrations } from "better-auth/db"
+import { createSuperAdmin } from "../services/admin"
 
-export default defineNitroPlugin(() => {
+export default defineNitroPlugin(async () => {
+  // register super admin
+  await createSuperAdmin()
+
   if (!import.meta.dev) {
     return
   }

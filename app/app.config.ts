@@ -17,6 +17,10 @@ export default defineAppConfig({
     }
   ],
   info: {
+    sitename: "Women Rights Initiative",
+    url: "https://womenrightsinitiative.org",
+    description: "The official website of Women Rights Initiative (WORI)",
+    ogImageLink: "/wori-og-image.webp",
     contacts: ["+234 803 549 9541", "+234 703 330 7354", "+234 805 238 6516"],
     address: "Sokoto Road, GRA Birnin Kebbi, Kebbi State",
     email: "info@woringieria.org",

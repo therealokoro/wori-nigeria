@@ -17,11 +17,10 @@
     { label: "Articles", link: "/admin/articles", icon: "lucide:newspaper" },
     { label: "Gallery", link: "/admin/gallery", icon: "lucide:image" },
     { label: "Contacts", link: "/admin/contacts", icon: "lucide:mail" }
-    // { label: "Settings", link: "/admin/#", icon: "lucide:settings-2" }
   ], "/admin")
 
   const isSidebarActive = ref(false)
-  useNuxtApp().hook("page:finish", () => {
+  useRuntimeHook("page:finish", () => {
     isSidebarActive.value = false
   })
 
