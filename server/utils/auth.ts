@@ -19,6 +19,7 @@ export function serverAuth() {
         delete: key => hubKV().del(`_auth:${key}`)
       },
       baseURL: getBaseURL(),
+      secret: process.env.BETTER_AUTH_SECRET,
       emailAndPassword: { enabled: true }
     })
   }

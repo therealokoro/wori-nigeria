@@ -4,12 +4,14 @@ import { serverAuth } from "../utils/auth"
 export const createSuperAdmin = async () => {
   const auth = serverAuth()
   const config = useRuntimeConfig()
-  const kvKey = "admin:info"
+  let admin: any = null
+  // const kvKey = "admin:info"
 
-  consola.log("Checking for superadmin account....")
-  let admin: any = await hubKV().get(kvKey)
+  try {
+    consola.log("Checking for superadmin account....")
+    // let admin: any = await hubKV().get(kvKey)
 
-  if (!admin) {
+    // if (!admin) {
     const res = await auth.api.signUpEmail({
       body: {
         name: config.public.adminAuthName,
@@ -18,11 +20,15 @@ export const createSuperAdmin = async () => {
       }
     })
 
-    hubKV().set(kvKey, res.user)
+    // hubKV().set(kvKey, res.user)
     admin = res.user
 
     consola.log("Suepradmin created successfully")
+    // }
+    return admin
   }
-
-  return admin
+  catch (e: any) {
+    consola.log(e)
+    return "Admin already exists!!!"
+  }
 }

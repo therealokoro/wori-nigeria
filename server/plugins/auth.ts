@@ -22,5 +22,7 @@ export default defineNitroPlugin(async () => {
     }
     await runMigrations()
     consola.success("[better-auth] Database migrations ran successfully")
+
+    await createSuperAdmin()
   })
 })
