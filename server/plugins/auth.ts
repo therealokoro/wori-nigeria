@@ -9,6 +9,7 @@ export default defineNitroPlugin(async () => {
   if (!import.meta.dev) {
     return
   }
+
   onHubReady(async () => {
     const auth = serverAuth()
     const { toBeCreated, toBeAdded, runMigrations } = await getMigrations(auth.options)
@@ -22,7 +23,5 @@ export default defineNitroPlugin(async () => {
     }
     await runMigrations()
     consola.success("[better-auth] Database migrations ran successfully")
-
-    await createSuperAdmin()
   })
 })

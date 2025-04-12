@@ -3,6 +3,7 @@ import { betterAuth } from "better-auth"
 import { D1Dialect } from "@atinux/kysely-d1"
 
 let _auth: ReturnType<typeof betterAuth>
+
 export function serverAuth() {
   if (!_auth) {
     _auth = betterAuth({
