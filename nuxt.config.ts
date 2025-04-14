@@ -58,7 +58,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/articles": { swr: 600 },
+    // "/articles": { swr: 600 },
     "/admin/**": { ssr: false }
   },
 
