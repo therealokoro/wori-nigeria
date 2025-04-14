@@ -10,5 +10,7 @@ export default defineEventHandler(async (e) => {
     .where(eq(Articles.id, id))
     .returning()
     .get()
+
+  await hubBlob().delete(data.coverImage)
   return { data }
 })
