@@ -25,6 +25,9 @@ export function objectToFormData(obj: Record<string, any>): FormData {
     if (Array.isArray(value)) {
       value.forEach(item => formData.append(`${key}[]`, item instanceof Blob ? item : item.toString()))
     }
+    else if (value instanceof Blob) {
+      formData.append(key, value)
+    }
     else if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
       formData.append(key, JSON.stringify(value))
     }
