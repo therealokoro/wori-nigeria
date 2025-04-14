@@ -2,7 +2,7 @@
 import * as v from "valibot"
 import type { FormBuilder } from "~/components/Ui/FormBuilder.vue"
 
-definePageMeta({ layout: "empty", auth: false })
+definePageMeta({ layout: "empty" })
 
 const formFields: FormBuilder[] = [
   {

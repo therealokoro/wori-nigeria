@@ -4,6 +4,10 @@
     {
       label: "Privacy Policy",
       link: "/#"
+    },
+    {
+      label: "Login",
+      link: "/login"
     }
   ]
   const socialLinks = useAppConfig().info.socialLinks

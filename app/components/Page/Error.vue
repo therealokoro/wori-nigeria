@@ -5,7 +5,7 @@
   const title = computed(() => error.statusMessage ?? "An error occured")
   const message = computed(() => {
     const def = "This could be a mistake or an internal error. Let's help you get your way around"
-    return error.data?.message ?? def
+    return error.data ? error.data.message : error.message ?? def
   })
 
   useSeoMeta({ title: title.value })

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-definePageMeta({ layout: "empty", auth: false })
+definePageMeta({ layout: "empty" })
 
 async function handleSubmit() {
   const toast = $toast.promise("Creating admin, please wait!...")
