@@ -3,6 +3,7 @@ import * as v from "valibot"
 import type { FormBuilder } from "~/components/Ui/FormBuilder.vue"
 
 definePageMeta({ layout: "empty" })
+useSeoMeta({ title: "Admin Login" })
 
 const formFields: FormBuilder[] = [
   {
@@ -40,13 +41,9 @@ const handleSubmit = form.handleSubmit(async ({ email, password }) => {
 </script>
 
 <template>
-  <Page
-    contain
-    title="Login"
-    class="pt-0 h-screen"
-  >
+  <div class="f-container h-screen">
     <div class="h-full flex-center flex-col gap-2">
-      <PageLogo />
+      <divLogo />
       <UiCard class="md:w-90 border-0 shadow-none">
         <template #content>
           <div class="text-center mb-7">
@@ -70,5 +67,5 @@ const handleSubmit = form.handleSubmit(async ({ email, password }) => {
     </div>
 
     <LazyUiNotivue />
-  </Page>
+  </div>
 </template>

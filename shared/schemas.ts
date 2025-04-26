@@ -4,8 +4,8 @@ import { Messages } from "~~/server/database/models"
 
 export const ImageSchema = v.pipe(
   v.file("Please select an image file."),
-  v.mimeType(["image/jpeg", "image/png"], "Please select a JPEG or PNG file."),
-  v.maxSize(1024 * 1024 * 1, "Please select a file smaller than 1 MB.")
+  v.mimeType(["image/jpeg", "image/jpg", "image/png"], "Please select only image files."),
+  v.maxSize(1024 * 1024 * 2, "Please select a file not larger than 2 MB.")
 )
 
 export const CreateAlbumSchema = v.object({

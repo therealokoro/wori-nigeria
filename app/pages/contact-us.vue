@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { CreateMessageSchema } from "~~/shared/schemas"
 
-const { contacts, email, socialLinks } = useAppConfig().info
+const { contacts, email, socialLinks, address } = useAppConfig().info
 const form = useForm({ validationSchema: toTypedSchema(CreateMessageSchema) })
 
 const submitHandler = form.handleSubmit(async (body) => {
@@ -49,9 +49,7 @@ const submitHandler = form.handleSubmit(async (body) => {
           <!-- Address -->
           <div class="list">
             <UiIcon name="mingcute:location-3-line" />
-            <ui-text type="small">
-              No. 4 Olusegun Obasanjo Road, Aleiro Quarters, Birnin Kebbi, Kebbi State
-            </ui-text>
+            <ui-text type="small">{{ address }}</ui-text>
           </div>
 
           <!-- Phone Numbers -->

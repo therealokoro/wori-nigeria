@@ -56,7 +56,7 @@
 
       <div
         v-else
-        class="w-full flex-center"
+        class="w-full flex-center mt-10"
       >
         <ui-text>Looks like there are no images at the moment</ui-text>
       </div>

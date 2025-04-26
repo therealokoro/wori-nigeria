@@ -5,7 +5,7 @@ interface Props {
   name: string
 }
 
-const albumId = useRoute().params?.id.toString()
+const albumId = useRoute().params?.id?.toString()
 
 const props = withDefaults(defineProps<Props>(), { count: 6 })
 

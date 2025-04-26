@@ -41,7 +41,11 @@ function disableCloseOnToast(event: Event) {
           <UiDialogHeader class="contents space-y-0 text-left">
             <UiDialogTitle
               class="px-6 pt-6 text-base"
-              title="Upload Album Images"
+              title="Create New Album"
+            />
+            <UiDialogDescription
+              class="px-6 text-xs"
+              description="Select images to be uploaded to the album"
             />
           </UiDialogHeader>
 
@@ -53,6 +57,7 @@ function disableCloseOnToast(event: Event) {
               placeholder="Enter a title for the album"
             />
 
+            <!-- <GalleryImageUploader name="images" /> -->
             <GalleryImageFileUpload
               name="images"
               :count="6"

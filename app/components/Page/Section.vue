@@ -11,12 +11,7 @@
   }>()
 
   const styles = tv({ base: "py-10 md:py-15" })
-  const innerStyles = tv({
-    base: "mb-10 md:max-w-70vw "
-      + props.titleLeft
-      ? "text-left"
-      : "text-center mx-auto"
-  })
+  const innerStyles = tv({ base: "mb-10 md:max-w-70vw" })
   const forward = useForwardProps(reactiveOmit(props, "class", "title", "titleLeft"))
   const title = computed(() => props.titleLeft ? props.titleLeft : props.title ? props.title : null)
 </script>
@@ -30,7 +25,10 @@
     <UiContainer>
       <div
         v-if="title"
-        :class="innerStyles({ class: props.innerClass })"
+        :class="[
+          innerStyles({ class: props.innerClass }),
+          titleLeft ? ' text-left' : 'text-center mx-auto',
+        ]"
       >
         <ui-text type="title">{{ title }}</ui-text>
         <ui-text
