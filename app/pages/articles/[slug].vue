@@ -18,7 +18,13 @@ const nextArticles = computed(() => data.value!.nextArticles)
       :title-left="title"
       :description="article.description"
       :meta="createdAt"
+      inner-class="mb-3"
     >
+      <ArticlesSocialShareBtns
+        :title="title"
+        :description="article.description"
+      />
+
       <div
         w="full"
         grid="~ cols-1 lg:cols-3 gap-7"

@@ -11,6 +11,6 @@ export default defineEventHandler(async (e) => {
     .returning()
     .get()
 
-  await hubBlob().delete(data.coverImage)
+  await hubBlob().delete(data!.coverImage)
   return { data }
 })

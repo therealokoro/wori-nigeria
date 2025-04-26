@@ -3,6 +3,7 @@
 
   const props = defineProps<{
     class?: string
+    innerClass?: string
     title?: string
     description?: string | null
     meta?: string
@@ -10,6 +11,12 @@
   }>()
 
   const styles = tv({ base: "py-10 md:py-15" })
+  const innerStyles = tv({
+    base: "mb-10 md:max-w-70vw "
+      + props.titleLeft
+      ? "text-left"
+      : "text-center mx-auto"
+  })
   const forward = useForwardProps(reactiveOmit(props, "class", "title", "titleLeft"))
   const title = computed(() => props.titleLeft ? props.titleLeft : props.title ? props.title : null)
 </script>
@@ -23,8 +30,7 @@
     <UiContainer>
       <div
         v-if="title"
-        class="mb-10 md:max-w-70vw"
-        :class="titleLeft ? 'text-left' : 'text-center mx-auto'"
+        :class="innerStyles({ class: props.innerClass })"
       >
         <ui-text type="title">{{ title }}</ui-text>
         <ui-text
