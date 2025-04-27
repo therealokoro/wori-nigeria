@@ -1,5 +1,7 @@
 const prerenderRoutes = [
-  "/about/**",
+  "/about/team",
+  "/about/history",
+  "/about/overview",
   "/contact-us",
   "/services"
 ]
