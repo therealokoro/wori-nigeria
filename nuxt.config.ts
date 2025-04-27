@@ -1,4 +1,8 @@
-const prerenderRoutes = ["/about-us/**", "/contact-us", "/services"]
+const prerenderRoutes = [
+  "/about/**",
+  "/contact-us",
+  "/services"
+]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
