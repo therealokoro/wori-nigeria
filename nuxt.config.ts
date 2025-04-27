@@ -1,10 +1,10 @@
-const prerenderRoutes = [
-  "/about/team",
-  "/about/history",
-  "/about/overview",
-  "/contact-us",
-  "/services"
-]
+// const prerenderRoutes = [
+//   "/about/team",
+//   "/about/history",
+//   "/about/overview",
+//   "/contact-us",
+//   "/services"
+// ]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -54,16 +54,16 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
 
   nitro: {
-    experimental: { openAPI: true, tasks: true },
-    prerender: {
-      crawlLinks: true,
-      routes: prerenderRoutes
-    },
-    cloudflare: {
-      pages: {
-        routes: { exclude: prerenderRoutes }
-      }
-    }
+    experimental: { openAPI: true, tasks: true }
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: prerenderRoutes
+    // },
+    // cloudflare: {
+    //   pages: {
+    //     routes: { exclude: prerenderRoutes }
+    //   }
+    // }
   },
 
   hub: {
