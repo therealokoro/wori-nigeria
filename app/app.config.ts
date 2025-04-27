@@ -8,7 +8,7 @@ export default defineAppConfig({
     { label: "Contacts", link: "/contact-us" },
     {
       label: "About Us",
-      link: "/#about-us",
+      link: "/about/overview",
       subLinks: [
         { label: "WORI Overview", link: "/about/overview" },
         { label: "Our History", link: "/about/history" },

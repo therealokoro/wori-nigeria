@@ -39,7 +39,7 @@
       <!-- Bottom -->
       <section flex="~ col items-center justify-between lg:row gap-5 pt-8">
         <p text="sm secondary-foreground">
-          &copy; {{ new Date().getFullYear() }} ACHEI. All rights reserved.
+          &copy; {{ new Date().getFullYear() }} WORI. All rights reserved.
         </p>
         <div flex="~ items-center gap-2">
           <nuxt-link
