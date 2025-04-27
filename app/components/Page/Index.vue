@@ -18,8 +18,8 @@
   }>()
 
   const info = useAppConfig().info
-  const description = _desc ? _desc : "info.description"
-  const ogImageLink = ogImageUrl ? ogImageUrl : "info.ogImageLink"
+  const description = _desc ? _desc : info.description
+  const ogImageLink = ogImageUrl ? ogImageUrl : info.ogImageLink
 
   useSeoMeta({
     title,
