@@ -43,7 +43,7 @@ const handleSubmit = form.handleSubmit(async ({ email, password }) => {
 <template>
   <div class="f-container h-screen">
     <div class="h-full flex-center flex-col gap-2">
-      <divLogo />
+      <PageLogo />
       <UiCard class="md:w-90 border-0 shadow-none">
         <template #content>
           <div class="text-center mb-7">

@@ -1,6 +1,6 @@
 <template>
   <Page
-    title="Welcome"
+    title="Homepage"
     spacing="0"
   >
     <template #hero>

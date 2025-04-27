@@ -25,7 +25,7 @@
       flex="horizontal"
       bg="background"
       rounded="$radius"
-      shadow="md"
+      shadow="sm"
       border
       p="3"
     >

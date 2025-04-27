@@ -8,21 +8,27 @@ const { data } = await useFetch("/api/articles/single", {
 
 const article = computed(() => data.value!.article)
 const title = computed(() => article.value.title)
+const description = computed(() => article.value.description)
+const coverImage = computed(() => article.value.coverImage)
 const createdAt = computed(() => formatDate(article.value.createdAt))
 const nextArticles = computed(() => data.value!.nextArticles)
 </script>
 
 <template>
-  <Page title="Blog">
+  <Page
+    :title
+    :description
+    :og-image-url="coverImage"
+  >
     <PageSection
       :title-left="title"
-      :description="article.description"
+      :description
       :meta="createdAt"
       inner-class="mb-3"
     >
       <ArticlesSocialShareBtns
-        :title="title"
-        :description="article.description"
+        :title
+        :description
       />
 
       <div
@@ -33,7 +39,7 @@ const nextArticles = computed(() => data.value!.nextArticles)
         <article class="col-span-1 lg:col-span-2">
           <div class="h-60 sm:h-80 md:h-100 mb-10">
             <NuxtImg
-              :src="article.coverImage"
+              :src="coverImage"
               image="cover"
               densities="x1"
             />

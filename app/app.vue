@@ -2,6 +2,11 @@
 import { ConfigProvider } from "radix-vue"
 
 const useIdFunction = () => useId()!
+
+useHead({
+  htmlAttrs: { lang: "en" },
+  link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+})
 </script>
 
 <template>

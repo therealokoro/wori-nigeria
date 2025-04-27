@@ -8,7 +8,7 @@ export const Articles = sqliteTable("articles", {
     .notNull()
     .$defaultFn(() => typeid("article").toString()),
   title: text("title", { length: 500 }).notNull().unique(),
-  description: text("description", { length: 500 }),
+  description: text("description", { length: 500 }).notNull(),
   slug: text("slug", { length: 500 }).notNull().unique(),
   content: text("content").notNull(),
   coverImage: text("cover_image", { length: 500 }).notNull(),

@@ -1,4 +1,4 @@
-// const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
+const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -16,13 +16,6 @@ export default defineNuxtConfig({
     "@morev/vue-transitions/nuxt"
   ],
 
-  $production: {
-    routeRules: {
-      "/api/albums/all": { swr: 60 * 60 * 1 },
-      "/api/articles/all": { swr: 60 * 60 * 1 }
-    }
-  },
-
   imports: {
     dirs: ["./constants"],
     imports: [
@@ -33,15 +26,6 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
-
-  app: {
-    head: {
-      charset: "utf-8",
-      htmlAttrs: { lang: "en" },
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
-    }
-  },
 
   css: [
     "@unocss/reset/tailwind-compat.css",
@@ -58,7 +42,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // "/articles": { swr: 600 },
     "/admin/**": { ssr: false }
   },
 
@@ -66,16 +49,16 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
 
   nitro: {
-    experimental: { openAPI: true, tasks: true }
-    // prerender: {
-    //   crawlLinks: true,
-    //   routes: prerenderRoutes
-    // },
-    // cloudflare: {
-    //   pages: {
-    //     routes: { exclude: prerenderRoutes }
-    //   }
-    // }
+    experimental: { openAPI: true, tasks: true },
+    prerender: {
+      crawlLinks: true,
+      routes: prerenderRoutes
+    },
+    cloudflare: {
+      pages: {
+        routes: { exclude: prerenderRoutes }
+      }
+    }
   },
 
   hub: {

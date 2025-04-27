@@ -7,7 +7,7 @@ const team = [
 
 <template>
   <Page
-    title="About WORI"
+    title="Meet the Team"
     description="Read all about WORI, how it was formed and much more"
   >
     <PageSection>

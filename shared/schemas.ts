@@ -34,11 +34,9 @@ export const ArticleSchema = v.object({
     v.nonEmpty("A title is required")
   ),
   content: v.pipe(v.string("Content is required"), v.nonEmpty("Content is required")),
-  description: v.nullable(
-    v.pipe(
-      v.string(),
-      v.maxWords("en", 20, "Description must be no more than 20 words")
-    )
+  description: v.pipe(
+    v.string(),
+    v.maxWords("en", 20, "Description must be no more than 20 words")
   ),
   coverImage: ImageSchema
 })

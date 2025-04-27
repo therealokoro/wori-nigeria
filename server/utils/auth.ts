@@ -21,7 +21,8 @@ export function serverAuth() {
       },
       baseURL: getBaseURL(),
       secret: process.env.BETTER_AUTH_SECRET,
-      emailAndPassword: { enabled: true }
+      emailAndPassword: { enabled: true },
+      trustedOrigins: ["https://womenrightsinitiative.org", "https://wori.nuxt.dev"]
     })
   }
   return _auth

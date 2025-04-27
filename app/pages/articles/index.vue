@@ -4,7 +4,8 @@ const { data } = await useFetch("/api/articles/latest")
 
 <template>
   <Page
-    title="Blog"
+    title="Articles"
+    description="Get the latest news and information about WORI and read about our events."
     bg="background"
   >
     <div v-if="data?.first">
