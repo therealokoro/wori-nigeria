@@ -1,4 +1,4 @@
-const prerenderRoutes = ["/about-us", "/contact-us", "/services"]
+const prerenderRoutes = ["/about-us/**", "/contact-us", "/services"]
 export default defineNuxtConfig({
   modules: [
     "@nuxt/icon",
@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   ],
 
   imports: {
-    dirs: ["./constants"],
     imports: [
       { from: "tailwind-variants", name: "tv" },
       { from: "tailwind-variants", name: "VariantProps", type: true },
